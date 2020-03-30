@@ -1,0 +1,23 @@
+version: '2.4'
+services:
+  salt-development:
+    build:
+      args:
+        BASE_DIR: /workspace
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    container_name: salt-development
+    ports:
+      - 4505:4505
+      - 4506:4506
+      - 8000:8000
+    tty: true
+    volumes:
+      - ..:/workspace:cached
+      - salt-development-vscode-extensions:/root/.vscode-server/extensions
+      - salt-development-root-local:/root/.local
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+volumes:
+  salt-development-vscode-extensions:
+  salt-development-root-local:

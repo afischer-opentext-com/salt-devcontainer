@@ -1,0 +1,35 @@
+{
+    "context": "..",
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "extensions": [
+        "aaron-bond.better-comments",
+        "davidanson.vscode-markdownlint",
+        "eamodio.gitlens",
+        "hbenl.vscode-test-explorer",
+        "ms-python.python",
+        "ms-pyright.pyright",
+        "natqe.reload",
+        "littlefoxteam.vscode-python-test-adapter",
+        "paragdiwan.gitpatch",
+        "redhat.vscode-yaml",
+        "ryu1kn.partial-diff",
+        "tuxtina.json2yaml",
+    ],
+    "name": "Salt Development",
+    "service": "salt-development",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintPath": "/root/.local/bin/pylint"
+    },
+    "workspaceFolder": "/workspace",
+    "appPort": [
+        4505,
+        4506,
+        8000
+    ],
+    "postCreateCommand": "bash -c /workspace/.devcontainer/setup.sh",
+}
